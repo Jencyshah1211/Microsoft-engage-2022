@@ -6,7 +6,7 @@ import sklearn
 import streamlit as st
 from streamlit_lottie import st_lottie
 import pickle
-
+from contact_us import show_contact_page
 from explore_page import show_explore_page
 from Predict_page import show_predict_page
 
@@ -44,8 +44,11 @@ def main():
     if page == "Predict":
         show_predict_page()
         st_lottie(lottie_thnxu)  
+    elif page == "Explore":
+        show_explore_page()
     else:
-        show_explore_page()   
+        show_contact_page()
+        st_lottie(lottie_thnxu)
 
   
 
