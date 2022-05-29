@@ -2,7 +2,7 @@
 My Microsoft engage 2022 project. I have made project on data analysis challenge.
 
 
-1] microsoft_project.ipynb is my main project in which I have done analysis in google colab. For running all lined you will need to download car_engage_2022.csv first.
+1] microsoft_project.ipynb is my main project in which I have done analysis in google colab. For running you will need to download car_engage_2022.csv first.
 2] LR_price_model is my price prediction model. For running it you will need to download clean_set csv file.
 3] clean_car_set.csv is my cleaned data csv file.
 4] Webapp.py is my streamlit web app.
