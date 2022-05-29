@@ -39,7 +39,7 @@ def main():
     
 
 
-    page = st.sidebar.selectbox("Explore or Predict", ("Explore", "Predict"))
+    page = st.sidebar.selectbox("Explore, Predict, Contact", ("Explore", "Predict","Contact us"))
     
     if page == "Predict":
         show_predict_page()
