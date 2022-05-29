@@ -11,5 +11,6 @@ pandas>=0.19
 flasgger==0.9.4
 seaborn==0.10.1
 streamlit
+streamlit_lottie
 
 
