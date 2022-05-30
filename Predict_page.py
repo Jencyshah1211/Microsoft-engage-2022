@@ -10,7 +10,7 @@ import pickle
 car = pd.read_csv('clean_car_set.csv')
 
 with open('LR_price_model.pkl', 'rb') as f:
-  model = pickle.load(f)
+  LR_model = pickle.load(f)
 
 def load_lottieurl(url: str):
     r = requests.get(url)
@@ -39,7 +39,7 @@ def show_predict_page():
  if st.button("Estimate Price", key='predict'):
     try:
             
-            prediction = model.predict(pd.DataFrame([[make, model, variant, fuel_type]],columns=['Make','Model','Variant','Fuel_Type']))
+            prediction = LR_model.predict(pd.DataFrame([[make, model, variant, fuel_type]],columns=['Make','Model','Variant','Fuel_Type']))
             output = prediction
             if output<0:
                 st.warning("Please select correct model and variant ")
