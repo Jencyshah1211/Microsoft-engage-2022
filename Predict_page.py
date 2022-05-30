@@ -25,24 +25,22 @@ def show_predict_page():
  st.write("""### Welcome to Price Prediction Page""")
  st_lottie(lottie_price)
  st.balloons()
- company = car['Make'].unique()
- car_model = car['Model'].unique()
- variant = car['Variant']
- fuel_type = car['Fuel_Type'].unique()
- select_company = st.selectbox("Select Company name ", company)
- 
- select_Model = st.selectbox("Select Model ", car_model)
- 
- select_variant = st.selectbox("Select variant ", variant)
- 
- select_fuel_type = st.selectbox("Select Fuel Type ", fuel_type)
- 
- st.write(' ')
+ #Select company and model
+ make = st.selectbox('Choose your company name' , car["Make"].unique())
+ company_data = car[['Model' , 'Variant' , 'Fuel_Type' ,'Ex-Showroom_Price']].where(car['Make'] == make).dropna();
+ model = st.selectbox('Choose your car name' , company_data["Model"].unique())
+ variant_data = company_data[['Variant' , 'Fuel_Type', 'Ex-Showroom_Price']].where(company_data['Model'] == model).dropna();
+
+ #Select variant
+ variant = st.selectbox('Choose your variant name' , variant_data['Variant'].unique())
+
+ #Select fuel type
+ fuel_type = st.selectbox('Choose your Fuel_type ' , variant_data['Fuel_Type'].unique())
  if st.button("Estimate Price", key='predict'):
     try:
             
-            prediction = model.predict(pd.DataFrame([[select_company, select_Model, select_variant, select_fuel_type]],columns=['Make','Model','Variant','Fuel_Type']))
-            output = round(prediction[0],5)
+            prediction = model.predict(pd.DataFrame([[make, model, variant, fuel_type]],columns=['Make','Model','Variant','Fuel_Type']))
+            output = prediction
             if output<0:
                 st.warning("Please select correct model and variant ")
             else:
