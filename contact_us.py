@@ -11,10 +11,8 @@ def load_lottieurl(url: str):
 lottie_contact = load_lottieurl("https://assets2.lottiefiles.com/private_files/lf30_vrcurbxk.json")
 
 def show_contact_page():
-    st_lottie(lottie_contact) 
-    
-  
-st.header(":mailbox: Get In Touch With Me!")
+    st_lottie(lottie_contact)
+    st.header(":mailbox: Get In Touch With Me!")
 
 
 contact_form = """
@@ -36,6 +34,9 @@ def local_css(file_name):
 
 
 local_css("style.css")
+    
+  
+
 
 
 
