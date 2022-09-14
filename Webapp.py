@@ -48,7 +48,7 @@ def main():
         show_explore_page()
     else:
         show_contact_page()
-        st_lottie(lottie_thnxu)
+       
 
   
 
