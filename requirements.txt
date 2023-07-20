@@ -1,4 +1,3 @@
-pip install streamlit-lottie
 gunicorn==19.9.0
 itsdangerous==1.1.0
 Jinja2==2.11.3
