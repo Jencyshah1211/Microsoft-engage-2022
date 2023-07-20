@@ -1,4 +1,4 @@
--m pip install --upgrade pip'
+-m pip install --upgrade pip
 pip install streamlit-lottie
 gunicorn==19.9.0
 itsdangerous==1.1.0
